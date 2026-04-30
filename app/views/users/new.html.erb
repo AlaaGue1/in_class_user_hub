@@ -1,0 +1,21 @@
+<% provide(:title, 'Sign up') %>
+<%= render 'layouts/partials/error_messages' %>
+<%= form_with(model: @user, html: { class: "form" }) do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<br>
+<br>
+<%= form.label :email %>
+<%= form.email_field :email %>
+<br>
+<br>
+<%= form.label :password %>
+<%= form.password_field :password %>
+<br>
+<br>
+<%= form.label :password_confirmation, "Confirmation" %>
+<%= form.password_field :password_confirmation %>
+<br>
+<br>
+<%= form.submit "Create my account" %>
+<% end %>

@@ -1,0 +1,32 @@
+<% if !@user.nil? %>
+
+<table class="mytable">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Created At</td>
+      <td>Updated At</td>
+      <td>TItle</td>
+      <td>Password</td>
+      <td>Phone</td>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @user.id %></td>
+        <td><%= @user.name %></td>
+        <td><%= @user.email %></td>
+        <td><%= @user.created_at %></td>
+        <td><%= @user.updated_at %></td>
+        <td><%= @user.title %></td>
+        <td><%= @user.password %></td>
+        <td><%= @user.phone %></td>
+      </tr>
+  </tbody>
+</table>
+
+<% else %>
+<div>User not found :(</div>
+<% end %>
