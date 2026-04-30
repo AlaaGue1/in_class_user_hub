@@ -9,6 +9,8 @@ class UsersController < ApplicationController
 
   def show
     @user = set_user
+    @posts = Post.where(user_id: @user.id)
+    @address = Address.find_by_user_id(@user.id)
     if @user.nil?
       flash[:alert]="User not found"
       redirect_to users_path

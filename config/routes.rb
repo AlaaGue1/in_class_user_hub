@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   resources :students
   root "users#index"
   get "users", to: "users#index"
@@ -10,6 +11,17 @@ Rails.application.routes.draw do
   patch "users/:id", to: "users#update"
   put "users/:id", to: "users#update"
   delete "users/:id", to: "users#destroy"
+
+  get "posts", to: "posts#index"
+  get "posts/new", to: "posts#new"
+  get "posts/:id", to: "posts#show", as: "post"
+  get "posts/edit"
+  post "posts", to: "posts#create"
+  get "posts/:id/edit", to: "posts#edit", as: "edit_post"
+  patch "posts/:id", to: "posts#update"
+  put "posts/:id", to: "posts#update"
+  delete "posts/:id", to: "posts#destroy"
+
 
   resources :users
   # get "static_pages/home"
